@@ -1,0 +1,43 @@
+<div class="container" class="login-page">
+  <div class="row">
+    <div class="col-12" style="height: 100px;"></div>
+  </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 pretty-form">
+      <form>
+        <div class="row">
+          <div class="col-12 text-center">
+            <img src="assets/images/accounts.png" width="auto" height="150px" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico" [(ngModel)]="email" />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"
+            [(ngModel)]="password" />
+        </div>
+        <div class="row" *ngIf="esperando">
+          <div class="col-12 text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="sr-only"></span> Espere ...
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success mr-2" (click)="login()">
+              Ingresar
+            </button>
+            <a [routerLink]="['/register']" class="btn btn-primary mr-2">
+              Crear Cuenta
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
