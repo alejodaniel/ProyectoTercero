@@ -12,7 +12,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-       'name','image','type',
+      'name','image','type','price','quantity',
     ];
 
     /**
@@ -23,19 +23,7 @@ class Product extends Model
     protected $hidden = [
        
     ];
-    function User()
-    {
-       return $this->belongsTo('App\User');
-    }
+   
 
-    function Order()
-    {
-       return $this->belongsTo('App\Order');
-    }
-
-    function Detail()
-    {
-       return $this->hasOne('App\Detail');
-    }
 
 }
