@@ -19,6 +19,9 @@ class CreateProductsTable extends Migration
           $table->string('name',255)->nullable($value = true);
           $table->string('image',255)->nullable($value = true);
           $table->string('type',255)->nullable($value = true);
+          $table->string('price',255)->nullable($value = true);
+          $table->string('quantity',255)->nullable($value = true);
+          
        });
     }
 
