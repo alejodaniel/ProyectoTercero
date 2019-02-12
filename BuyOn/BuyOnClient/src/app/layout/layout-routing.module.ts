@@ -26,6 +26,14 @@ const routes: Routes = [
         loadChildren: './carrito/carrito.module#CarritoModule'
       },
       {
+        path: 'categoria1',
+        loadChildren: './categoria1/categoria1.module#Categoria1Module'
+      },
+      {
+        path: 'categoria2',
+        loadChildren: './categoria2/categoria2.module#Categoria2Module'
+      },
+      {
         path: 'blank',
         loadChildren: './blank-page/blank-page.module#BlankPageModule'
       },
