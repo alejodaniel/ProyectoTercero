@@ -8,27 +8,27 @@
     <div class="col-3"></div>
     <div class="col-6 pretty-form">
       <div class="form-group">
-        <label for="exampleInputEmail1">Nombre</label>
+        <label class="texto" for="exampleInputEmail1">Nombre</label>
         <input
           type="text"
           class="form-control"
           id="name"
-          placeholder="Nombres"
+          placeholder="Nombre"
           [(ngModel)]="name"
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Apellido</label>
+        <label class="texto" for="exampleInputEmail1">Apellido</label>
         <input
           type="text"
           class="form-control"
           id="surname"
-          placeholder="Apellidos"
+          placeholder="Apellido"
           [(ngModel)]="surname"
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Correo Electrónico</label>
+        <label class="texto" for="exampleInputEmail1">Correo Electrónico</label>
         <input
           type="email"
           class="form-control"
@@ -38,7 +38,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Contraseña</label>
+        <label class="texto" for="exampleInputEmail1">Contraseña</label>
         <input
           type="password"
           class="form-control"
@@ -48,7 +48,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Repetir Contraseña</label>
+        <label class="texto" for="exampleInputEmail1">Repetir Contraseña</label>
         <input
           type="password"
           class="form-control"
@@ -60,7 +60,7 @@
 
       <div class="row" *ngIf="esperando">
         <div class="col-12 text-center">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-warning" role="status">
             <span class="sr-only"></span> Espere ...
           </div>
         </div>
@@ -69,10 +69,10 @@
       <br>
       <div class="row">
         <div class="col-12 text-center">
-          <button type="button" class="btn btn-primary mr-2" (click)="registrar()">
+          <button type="button" class="btn btn-outline-info  mr-2" (click)="registrar()"><i class="fas fa-user-check fa-lg"></i> 
             Crear Cuenta
           </button>
-          <a [routerLink]="['/login']" class="btn btn-danger">
+          <a [routerLink]="['/login']" class="btn btn-outline-warning "><i class="fas fa-undo-alt"></i> 
             Regresar
           </a>
         </div>
