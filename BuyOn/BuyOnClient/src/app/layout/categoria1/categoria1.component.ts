@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../../services/CRUD/product.service';
+import { Product } from '../../models/Product';
 
 @Component({
   selector: 'app-categoria1',
@@ -6,7 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categoria1.component.scss']
 })
 export class Categoria1Component implements OnInit {
-  constructor() {}
+  listProducts: any = [];
+  product: Product;
 
-  ngOnInit() {}
+  constructor(private productServices: ProductService) {
+    this.getProducts();
+    this.product = new Product();
+  }
+
+  ngOnInit() {
+  }
+
+  getProducts() {
+
+    this.productServices.get().then(r => {
+      this.listProducts = r;
+    }).catch(e => {
+
+    });
+  }
+
+  saveProducts() {
+    this.productServices.post(this.product).then(r => {
+      this.getProducts();
+    }).catch(e => {
+
+    });
+  }
+
+  agregarCarrito(id) {
+    alert(id);
+  }
 }
