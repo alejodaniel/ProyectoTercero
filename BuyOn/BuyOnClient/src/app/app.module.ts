@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
