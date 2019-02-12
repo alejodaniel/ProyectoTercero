@@ -1,15 +1,38 @@
-$topnav-background-color: #343a40;
-:host {
-  .navbar {
-    background-color: $topnav-background-color;
-    .navbar-brand {
-      color: #fff;
-    }
-    .nav-item > a {
-      color: #999;
-      &:hover {
-        color: #fff;
-      }
-    }
-  }
+/*color de las opciones del navbar*/
+
+.nav-item .nav-link {
+	color: #F7C42D
+}
+
+.nav-item .nav-link:hover {
+	background: #F7C42D;
+	color: #343A40;
+}
+
+/*color del título Buy-On*/
+
+.navbar-brand {
+	color: #F7C42D
+}
+
+/*margenes del navbar*/
+
+.navbar {
+	height: 45px;
+	border: 1px solid;
+	position: relative;
+	width: 100%;
+}
+
+/*cambios de color en el dropdown*/
+
+.dropdown-item:hover {
+	background: #F7C42D;
+	color: #343A40;
+}
+
+.carrito-btn {
+	padding: 0px;
+    width: 200px;
+    height: 28px;
 }

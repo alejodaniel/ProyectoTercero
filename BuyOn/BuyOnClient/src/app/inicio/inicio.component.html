@@ -27,35 +27,6 @@
         </a>
     </div>
     <br />
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <br />
 <div class="container container-productos-inicio">
@@ -64,16 +35,17 @@
         <div class="col-3" *ngFor = "let productos of listProducts">
             <div class="card" >
                 <p></p>
-                <img class="mediana img-center" src="assets/img/Banner1.png">
+                <img class="mediana img-center" src="{{productos.image}}">
                 <div class="card-body">
                     <h5 class="card-title">{{productos.name}}</h5>
                     <p class="card-text">{{productos.type}}</p>
-                    <h2 class="precio text-center bg-secondary">$1.50</h2>
+                    <h2 class="precio text-center bg-secondary">{{productos.price}}</h2>
                     <button (click)="agregarCarrito(productos.id)"  type="button" class="btn btn-block btn-outline-secondary"><i class="fas fa-cart-plus"></i>
                         Al Carrito</button>
                 </div>
             </div>
-            <br>
+            <br> 
         </div>
     </div>
 </div>
+

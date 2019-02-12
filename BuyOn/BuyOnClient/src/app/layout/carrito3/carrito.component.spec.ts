@@ -8,8 +8,9 @@ describe('CarritoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CarritoComponent]
-    }).compileComponents();
+      declarations: [ CarritoComponent ]
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
