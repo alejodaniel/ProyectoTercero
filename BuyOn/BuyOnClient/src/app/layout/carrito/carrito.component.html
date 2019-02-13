@@ -1,6 +1,7 @@
 <div class="container">
     <h1 class="titulo bg-secondary" align='center'><i class="fas fa-shopping-cart"></i> Carrito</h1>
-   <div class="card col-12 bg-white border-secondary">
+    <div class="card col-12 bg-white border-secondary">
+        <!--
         <div>
             <table>
                 <tr *ngFor="let product of productsTemp">
@@ -8,49 +9,53 @@
                         {{product.name}}
                     </td>
                     <td>
-                        <input type="number">
+                        <input type="number" min="1">
                     </td>
                     <td>
                         {{product.price}}
                     </td>
                 </tr>
             </table>
-        </div>
-        <div class="card-body card-group *ngFor="let product of productsTemp">
-            <div class="col-4">
-                <h4 class="producto text-center">Productos</h4>
-                <h5 class="card-text">
-                    {{product.name}}
-                </h5>
-            </div>
+        </div>-->
+        <div class="card-body card-group">
             <div class="card-body card-group">
-                    <div class="col-4">
-                        <h4 class="producto text-center">Productos</h4>
-                        <h5 class="card-text">
-                            {{product.price}}
-                        </h5>
-                    </div>
-
-            <div class="col-1">
-                <h4 class="opcion text-center">Item</h4>
-                <h5 class="card-text">
-                    <button type="button" class="item-btn btn btn-outline-danger btn-block"><i class="fas fa-trash-alt fa-lg"></i></button>
-                </h5>
-                <h5 class="card-text">
-                    <button type="button" class="item-btn btn btn-outline-danger btn-block"><i class="fas fa-trash-alt fa-lg"></i></button>
-                </h5>
-            </div>
-            <div class="col-1">
-                <h4 class="total text-center">Total</h4>
-                <h5 class="card-text text-right">
-                    {{product.price}}
-                </h5>
-            </div>
-            <div class="col-1">
-                <h4 class="card-title text-center">Ordenar</h4>
-                <button type="button" class="item-btn2 btn btn-outline-success btn-block"><i class="fas fa-cash-register fa-lg"></i>
-                    Listo</button>
+                <div class="col-4">
+                    <h4 class="producto text-center">Productos</h4>
+                    <h5 class="card-text" *ngFor="let product of productsTemp">
+                        {{product.name}}
+                    </h5>
+                </div>
+                <div class="col-1">
+                    <h4 class="total text-center">Precio</h4>
+                    <h5 class="card-text text-right" *ngFor="let product of productsTemp">
+                        ${{product.price}}
+                    </h5>
+                </div>
+                <div class="col-2">
+                    <h4 class="cantidad text-center">Cantidad</h4>
+                    <input style="width:150px;height:30px" type="number" min="1" value="1"
+                        *ngFor="let product of productsTemp">
+                </div>
+                <div class="col-1">
+                    <h4 class="total text-center">Total</h4>
+                    <h5 class="card-text text-right" *ngFor="let product of productsTemp">
+                        ${{product.price}}
+                    </h5>
+                </div>
+                <div class="col-2">
+                    <h4 class="opcion text-center">Item</h4>
+                    <h5 class="card-text">
+                        <button type="button" class="item-btn btn btn-outline-danger btn-block"
+                            *ngFor="let product of productsTemp"><i class="fas fa-trash-alt "></i></button>
+                    </h5>
+                </div>
+                <br />
             </div>
         </div>
+        <p></p>
+        <button type="button" class="item-btn2 btn btn-outline-success btn-block"><i
+                class="fas fa-cash-register fa-lg"></i>
+            ORDENAR</button>
+        <p></p>
     </div>
 </div>
