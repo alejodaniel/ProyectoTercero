@@ -4,6 +4,9 @@ import { ProductService } from 'src/app/services/CRUD/product.service';
 import { Product } from 'src/app/models/Product';
 import { User } from 'src/app/models/profile/User';
 import { environment } from 'src/environments/environment';
+import { timingSafeEqual } from 'crypto';
+import { Order } from 'src/app/models/Order';
+import { OrderService } from 'src/app/services/CRUD/order.service';
 
 @Component({
   selector: 'app-carrito',
@@ -16,16 +19,19 @@ import { environment } from 'src/environments/environment';
 export class CarritoComponent implements OnInit {
   id: any = null;
   product: Product;
+  cantidad: any = 1;
   user: User;
+  order: Order;
   products: Array<Product>;
   productsTemp: Array<Product>;
-  constructor(private root: ActivatedRoute, private productService: ProductService) {
+  constructor(private root: ActivatedRoute, private productService: ProductService, private orderService: OrderService) {
     this.id = this.root.snapshot.params['id'];
     this.product = new Product();
+    this.order = new Order();
     this.productsTemp = new Array<Product>();
     this.user = new User();
     this.user = JSON.parse(sessionStorage.getItem('user'));
-    
+
   }
   recuperarProducto() {
 
@@ -33,7 +39,7 @@ export class CarritoComponent implements OnInit {
       .then(r => {
         this.products = r as Array<Product>;
         environment.carritoCompras.forEach(a => {
-          console.log('carrito '+environment.carritoCompras.length);
+          console.log('carrito ' + environment.carritoCompras.length);
           this.products.forEach(b => {
             if (a == b.id) {
               console.log(b);
@@ -49,15 +55,28 @@ export class CarritoComponent implements OnInit {
 
       });
 
-
   }
-
+  
   guardarProducto() {
+    for (let i = 0; i < this.productsTemp.length; i++) {
+      console.log(this.productsTemp[i].price);
+      this.order.price = this.productsTemp[i].price * this.cantidad;
+      this.order.quantity = this.cantidad;
+      this.order.idUser = this.user.id;
+      this.order.idProduct = this.productsTemp[i].id;
+      this.orderService.post(this.order).then(r => {
+        console.log(r);
+      }).catch(e => {
+
+      });
+    }
 
   }
 
   ngOnInit() {
-console.log(environment.carritoCompras);
- this.recuperarProducto();
+    console.log(environment.carritoCompras);
+    this.recuperarProducto();
   }
 }
+
+

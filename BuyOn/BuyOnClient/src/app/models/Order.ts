@@ -1,4 +1,8 @@
 export class Order {
    id: number;
-   date: any;
+   date?: any;
+   price?: any;
+   quantity?: any;
+   idUser?: number;
+   idProduct?: number;
 }

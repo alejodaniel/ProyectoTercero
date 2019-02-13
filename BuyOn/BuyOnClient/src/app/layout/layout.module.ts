@@ -9,11 +9,13 @@ import { LayoutComponent } from './layout.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports:
     [CommonModule, 
     LayoutRoutingModule, 
+    FormsModule,
     NgbDropdownModule,
     HttpModule],
     

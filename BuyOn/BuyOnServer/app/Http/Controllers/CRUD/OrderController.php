@@ -33,7 +33,10 @@ class OrderController extends Controller
           DB::beginTransaction();
           $result = $data->json()->all();
           $order = new Order();
-          $order->date = $result['date'];
+          $order->price = $result['price'];
+          $order->quantity = $result['quantity'];
+          $order->idUser = $result['idUser'];
+          $order->idFriend = $result['idFriend'];
           $order->save();
           DB::commit();
        } catch (Exception $e) {

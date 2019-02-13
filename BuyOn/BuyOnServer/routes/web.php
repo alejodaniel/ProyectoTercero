@@ -17,6 +17,7 @@ $router->get('/', function () use ($router) {
 
 
 $router->get('/product', ['uses' => 'ProductController@get']);
+$router->post('/order', ['uses' => 'OrderController@post']);
 
 $router->group(['middleware' => []], function () use ($router) {
    $router->post('/login', ['uses' => 'AuthController@login']);
@@ -49,7 +50,6 @@ $router->group(['middleware' => ['auth']], function () use ($router) {
    $router->delete('/product', ['uses' => 'ProductController@delete']);
 
    //CRUD Order
-   $router->post('/order', ['uses' => 'OrderController@post']);
    $router->get('/order', ['uses' => 'OrderController@get']);
    $router->get('/order/paginate', ['uses' => 'OrderController@paginate']);
    $router->put('/order', ['uses' => 'OrderController@put']);
