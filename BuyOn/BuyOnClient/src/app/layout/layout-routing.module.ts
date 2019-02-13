@@ -22,7 +22,7 @@ const routes: Routes = [
         loadChildren: './profile/profile.module#ProfileModule'
       },
       {
-        path: 'carrito',
+        path: 'carrito/:id',
         loadChildren: './carrito/carrito.module#CarritoModule'
       },
       {

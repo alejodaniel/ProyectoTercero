@@ -11,6 +11,8 @@ export class ProductService {
    url = environment.api + 'product/';
    options = new RequestOptions();
 
+   //recupera la sesionstorage
+
    constructor(private http: Http) {
       this.options.headers = new Headers();
       this.options.headers.append('api_token', sessionStorage.getItem('api-token'));

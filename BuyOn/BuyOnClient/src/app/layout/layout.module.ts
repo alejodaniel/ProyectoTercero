@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { Routes, RouterModule } from '@angular/router';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
@@ -14,7 +15,6 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     [CommonModule, 
     LayoutRoutingModule, 
     NgbDropdownModule,
-    
     HttpModule],
     
     declarations: 
