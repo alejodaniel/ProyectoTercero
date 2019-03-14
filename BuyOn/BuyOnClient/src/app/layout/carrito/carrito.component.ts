@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { timingSafeEqual } from 'crypto';
 import { Order } from 'src/app/models/Order';
 import { OrderService } from 'src/app/services/CRUD/order.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-carrito',
@@ -56,21 +57,27 @@ export class CarritoComponent implements OnInit {
       });
 
   }
-  
+
+
+
+
+
+
+
   guardarProducto() {
-    for (let i = 0; i < this.productsTemp.length; i++) {
-      console.log(this.productsTemp[i].price);
-      this.order.price = this.productsTemp[i].price * this.cantidad;
-      this.order.quantity = this.cantidad;
-      this.order.idUser = this.user.id;
-      this.order.idProduct = this.productsTemp[i].id;
-      this.orderService.post(this.order).then(r => {
-        console.log(r);
+
+    this.productsTemp.forEach(elementos => {
+      this.orderService.post(elementos).then(r => {
+        console.log(this.user.id, this.user.name, elementos.name, elementos.type, elementos.price);
       }).catch(e => {
 
       });
-    }
-
+    })
+    swal({
+      title: 'Orden Eviada',
+      text: 'Gracias por usar Buy-On',
+      icon: 'success',
+    })
   }
 
   ngOnInit() {

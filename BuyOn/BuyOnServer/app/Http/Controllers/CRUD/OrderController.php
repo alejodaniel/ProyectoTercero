@@ -44,7 +44,7 @@ class OrderController extends Controller
        }
        return response()->json($order,200);
     }
-
+//request solicttud
     function put(Request $data)
     {
        try{

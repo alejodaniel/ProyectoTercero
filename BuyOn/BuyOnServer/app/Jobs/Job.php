@@ -9,16 +9,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 abstract class Job implements ShouldQueue
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Queueable Jobs
-    |--------------------------------------------------------------------------
-    |
-    | This job base class provides a central location to place any logic that
-    | is shared across all of your jobs. The trait included with the class
-    | provides access to the "queueOn" and "delay" queue helper methods.
-    |
-    */
-
-    use InteractsWithQueue, Queueable, SerializesModels;
+    /*Esta clase de base de trabajo proporciona una ubicación central para colocar cualquier lógica que
+| se comparte en todos sus trabajos. El rasgo incluido con la clase.
+| proporciona acceso a los métodos de ayuda de cola "queueOn" y "delay
+    use InteractsWithQueue, Queueable, SerializesModels;*/
 }

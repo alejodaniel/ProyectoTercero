@@ -1,13 +1,13 @@
 <div class="container text-center">
     <div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <!-- <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+        </ol>-->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../../assets/img/Banner1.png" class="d-block w-100" alt="...">
+                <img src="assets/img/Banner1.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img src="../../assets/img/Banner2.png" class="d-block w-100" alt="...">
@@ -15,7 +15,8 @@
             <div class="carousel-item">
                 <img src="../../assets/img/Banner3.jpg" class="d-block w-100" alt="...">
             </div>
-        </div><!--
+        </div>
+        <!--
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true">
             </span>
@@ -35,7 +36,7 @@
                      <input type="text" [(ngModel)]="product.name" name="name"> {{productos.image}} -->
     <div class="row">
         <div class="col-3" *ngFor="let productos of listProducts">
-            <div class="card" >
+            <div class="card border-warning">
                 <p></p>
                 <img class="mediana img-center" src="{{productos.image}}">
                 <div class="card-body">
@@ -43,8 +44,8 @@
                     <p class="card-text">{{productos.type}}</p>
                     <h2 class="precio text-center bg-secondary">
                         $ {{productos.price}}</h2>
-                    <a (click)="agregarItem(productos.id)" routerLink="/carrito/{{productos.id}}">Agregar</a>
-
+                    <a class="btn btn-outline-secondary btn-block" (click)="agregarItem(productos.id)" routerLink="/carrito/{{productos.id}}"><i
+                            class="fas fa-cart-plus fa-lg"></i> Agregar al Carrito</a>
                 </div>
             </div>
             <br>

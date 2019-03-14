@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/CRUD/product.service';
 import { Product } from '../../models/Product';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-categoria1',
@@ -8,8 +9,10 @@ import { Product } from '../../models/Product';
   styleUrls: ['./categoria1.component.scss']
 })
 export class Categoria1Component implements OnInit {
+  
   listProducts: any = [];
   product: Product;
+  prueba = [];
 
   constructor(private productServices: ProductService) {
     this.getProducts();
@@ -28,6 +31,7 @@ export class Categoria1Component implements OnInit {
     });
   }
 
+
   saveProducts() {
     this.productServices.post(this.product).then(r => {
       this.getProducts();
@@ -38,5 +42,9 @@ export class Categoria1Component implements OnInit {
 
   agregarCarrito(id) {
     alert(id);
+  }
+
+  agregarItem(id:number){
+environment.carritoCompras.push(id);
   }
 }

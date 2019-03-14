@@ -5,9 +5,9 @@
 | Application Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
+| Aquí es donde puede registrar todas las rutas para una aplicación.
+| Es una brisa. Simplemente dile a Lumen los URI a los que debe responder
+| y asigne el Cierre para llamar cuando se solicite ese URI.
 |
 */
 
